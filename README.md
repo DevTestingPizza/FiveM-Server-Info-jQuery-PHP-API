@@ -1,4 +1,4 @@
-## FiveM Server Info JavaScript API
+## FiveM Server Info JavaScript/jQuery/PHP API
 A jQuery/JavaScript API that provides easy functions for getting all server and player related info from a FiveM server.
 
 ---------------
