@@ -52,6 +52,7 @@ function getServerIcon(){
     var serverIcon = serverInfo['icon'] != undefined ? "<img src='data:image/png;base64," + serverInfo['icon'] + "' id='server-icon'>" : '<span style="color:red">ERROR: Could not get the serverIcon.</span>';
     return serverIcon
 }
+
 function getServerHostname(){
     var serverHostname = serverData['Data']['hostname'] != undefined ? serverData['Data']['hostname'] : 'ERROR: Could not get the server hostname.';
     return serverHostname
@@ -76,8 +77,8 @@ function getPlayers(){
     var players = serverData['Data']['players'] != undefined ? serverData['Data']['players'] : 'ERROR: Could not get a list of players.';
     return players
 }
-function getPlayer(player){
-    var player = getPlayers()[player] != undefined ? getPlayers()[player] : 'ERROR: Invalid PlayerID.';
+function getPlayer(playerId){
+    var player = getPlayers()[playerId] != undefined ? getPlayers()[playerId] : 'ERROR: Invalid PlayerID.';
     return player
 }
 function getPlayerIdFromServerId(playerServerId){
@@ -89,24 +90,28 @@ function getPlayerIdFromServerId(playerServerId){
         }
     }
 }
-function getPlayerIp(player){
-    var playerIp = getPlayer(player) != 'ERROR: Invalid PlayerID.' ? getPlayer(player)['endpoint'] : 'ERROR: Invalid PlayerID.';
+function getPlayerServerId(playerId){
+    var playerServerId = getPlayer(playerId) != 'ERROR: Invalid PlayerID.' ? getPlayer(playerId)['id'] : 'ERROR: Invalid PlayerID.';
+    return playerServerId
+}
+function getPlayerIp(playerId){
+    var playerIp = getPlayer(playerId) != 'ERROR: Invalid PlayerID.' ? getPlayer(playerId)['endpoint'] : 'ERROR: Invalid PlayerID.';
     return playerIp
 }
-function getPlayerPing(player){
-    var playerPing = getPlayer(player) != 'ERROR: Invalid PlayerID.' ? getPlayer(player)['ping'] : 'ERROR: Invalid PlayerID.';
+function getPlayerPing(playerId){
+    var playerPing = getPlayer(playerId) != 'ERROR: Invalid PlayerID.' ? getPlayer(playerId)['ping'] : 'ERROR: Invalid PlayerID.';
     return playerPing
 }
-function getPlayerName(player){
-    var playerName = getPlayer(player) != 'ERROR: Invalid PlayerID.' ? getPlayer(player)['name'] : 'ERROR: Invalid PlayerID.';
+function getPlayerName(playerId){
+    var playerName = getPlayer(playerId) != 'ERROR: Invalid PlayerID.' ? getPlayer(playerId)['name'] : 'ERROR: Invalid PlayerID.';
     return playerName
 }
-function getPlayerIdentifiers(player){
-    var playerIdentifiers = getPlayer(player)['identifiers'] != undefined ? getPlayer(player)['identifiers'] : 'ERROR: Invalid PlayerID.';
+function getPlayerIdentifiers(playerId){
+    var playerIdentifiers = getPlayer(playerId)['identifiers'] != undefined ? getPlayer(playerId)['identifiers'] : 'ERROR: Invalid PlayerID.';
     return playerIdentifiers
 }
-function getPlayerIdentifierFromIndex(player, identifierIndex){
-    var playerIdentifier = getPlayerIdentifiers(player)[identifierIndex] != undefined ? getPlayerIdentifiers(player)[identifierIndex] : 'ERROR: Invalid IdentifierIndex.';
+function getPlayerIdentifierFromIndex(playerId, identifierIndex){
+    var playerIdentifier = getPlayerIdentifiers(playerId)[identifierIndex] != undefined ? getPlayerIdentifiers(playerId)[identifierIndex] : 'ERROR: Invalid IdentifierIndex.';
     if (playerIdentifier == "E"){
         playerIdentifier = 'ERROR: Invalid PlayerID.'
     }
