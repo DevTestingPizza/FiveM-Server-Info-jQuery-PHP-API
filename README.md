@@ -4,6 +4,7 @@ A jQuery/JavaScript API that provides easy functions for getting all server and 
 ---------------
 
 Wiki: https://github.com/TomGrobbe/FiveM-Server-Info-JavaScript-API/wiki
+
 GitHub Page: https://github.com/TomGrobbe/FiveM-Server-Info-JavaScript-API/
 
 ---------------
