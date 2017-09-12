@@ -17,4 +17,6 @@ For details, see http://creativecommons.org/licenses/by/3.0/.
 ---------------
 
 ### Credits:
-**jQuery Ajax Cross Origin Plugin:** (c) 2014, Writen by Erez Ninio. site: www.dealhotelbook.com
+**jQuery Ajax Cross Origin Plugin:** 
+(c) 2014, Writen by Erez Ninio. site: www.dealhotelbook.com
+(http://www.ajax-cross-origin.com/)
