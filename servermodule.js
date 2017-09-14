@@ -41,9 +41,6 @@ function LoadServerData(serverEndpoint){
 }
 
 
-
-
-
 //--------------------------------------------------------------------------------------------\\
 //   All Server Info Getters, for a full list and documentation visit the GitHub wiki page.   \\
 //--------------------------------------------------------------------------------------------\\
