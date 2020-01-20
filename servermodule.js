@@ -15,7 +15,7 @@ function LoadServerData(serverEndpoint){
     });
     
     // Get the server data for the specified serverAddress from the FiveM Serverlist.
-    $.getJSON("http://runtime.fivem.net/api/servers/", function(data){
+    $.getJSON("http://servers-live.fivem.net/api/servers/", function(data){
         for (var i = 0; i < data.length; i++){
             if(data[i]['EndPoint'] == serverAddress){
                 serverData = data[i];
